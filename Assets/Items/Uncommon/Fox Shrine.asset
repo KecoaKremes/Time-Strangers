@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73fa44f28f1c9c64f8f727c47d99ded7, type: 3}
+  m_Name: Fox Shrine
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  id: 9
+  itemName: Fox Shrine
+  description: Gain 7% attack speed for every enemy close to you, gain 7% movement
+    speed for every enemy away
+  rarity: 1
+  placeholderColor: {r: 0, g: 1, b: 0, a: 1}
+  worldModelPrefab: {fileID: 0}
+  icon: {fileID: 0}

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695c389ae2673e2438d7ceb99f725672, type: 3}
+  m_Name: Character_01
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterData
+  characterName: PlaceHolder type
+  isUnlocked: 1
+  portrait: {fileID: 0}
+  characterPrefab: {fileID: 3421148548315347447, guid: 5ff66a4aa193f9c4c9e7ec5d6a7b6755, type: 3}
+  passiveDescription: "Double Jump \u2014 gain an extra jump while airborne."
+  primaryDescription: Fires a single projectile. Deals 10 damage
+  secondaryDescription: 'Lobs a large arcing projectile that explodes in an area
+    on impact. Deals 30 damage
+
+    6s Cooldown'
+  utilityDescription: Dash forward, phasing through enemies briefly. 4s cooldown.
+  ultimateDescription: For 10 seconds, primary fire becomes a 6-pellet spread shot.
+    20s cooldown.
+  signatureDescription: Deal 100% increased damage for 5 seconds. 30s cooldown.
