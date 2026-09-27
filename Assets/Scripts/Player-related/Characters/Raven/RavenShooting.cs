@@ -20,6 +20,7 @@ public class RavenShooting : MonoBehaviour
 
     private float nextPrimaryTime;
     private float nextSecondaryTime;
+    public Animator animator;
 
     public float GetPrimaryCooldownFraction() => Mathf.Clamp01((nextPrimaryTime - Time.time) / primaryFireRate);
     public float GetPrimarySecondsRemaining() => Mathf.Max(0f, nextPrimaryTime - Time.time);
@@ -52,6 +53,7 @@ public class RavenShooting : MonoBehaviour
 
     void FirePrimary()
     {
+        if (animator != null) animator.SetTrigger("FireRifle");
         Vector3 aimPoint = GetAimPoint();
         Vector3 direction = (aimPoint - firePoint.position).normalized;
 
@@ -63,6 +65,7 @@ public class RavenShooting : MonoBehaviour
 
     void FireSecondary()
     {
+        if (animator != null) animator.SetTrigger("FireRevolver");
         Vector3 aimPoint = GetAimPoint();
         Vector3 direction = (aimPoint - firePoint.position).normalized;
 

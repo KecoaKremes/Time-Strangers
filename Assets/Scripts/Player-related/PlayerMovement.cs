@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity; // tracks vertical speed (falling/jumping)
     private bool isGrounded;
 
+    public Animator animator;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -33,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
 void Update()
 {
     isGrounded = controller.isGrounded;
+    bool isSprinting = Input.GetKey(KeyCode.LeftShift);
+    float currentSpeed = isSprinting ? sprintSpeed : walkSpeed;
 
     if (isGrounded && !wasGroundedLastFrame && velocityYLastFrame < fallDamageThreshold)
 {
@@ -56,8 +60,7 @@ void Update()
     float inputZ = Input.GetAxis("Vertical");
     Vector3 move = transform.right * inputX + transform.forward * inputZ;
 
-    bool isSprinting = Input.GetKey(KeyCode.LeftShift);
-    float currentSpeed = isSprinting ? sprintSpeed : walkSpeed;
+    
     controller.Move(move * currentSpeed * Time.deltaTime);
     if (ItemEffectSystem.Instance != null)
     currentSpeed *= ItemEffectSystem.Instance.GetFoxShrineMoveSpeedMultiplier(transform.position);
@@ -74,6 +77,13 @@ void Update()
 
     wasGroundedLastFrame = isGrounded;
     velocityYLastFrame = velocity.y;
+
+    if (animator != null)
+    {
+        float inputMagnitude = new Vector2(inputX, inputZ).magnitude;
+        animator.SetFloat("Speed", inputMagnitude);
+        animator.SetBool("IsSprinting", isSprinting && inputMagnitude > 0.1f);
+    }
     
 }
 
